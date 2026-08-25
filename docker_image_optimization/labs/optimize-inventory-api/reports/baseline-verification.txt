@@ -1,0 +1,4 @@
+PASS health: {"service":"inventory-api","status":"ok"}
+PASS items: {"items":[{"id":1,"name":"layers"},{"id":2,"name":"cache"}]}
+INFO configured user: <empty/root>
+INFO image size bytes: 93303674

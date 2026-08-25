@@ -1,0 +1,7 @@
+PASS health: {"service":"inventory-api","status":"ok"}
+PASS items: {"items":[{"id":1,"name":"layers"},{"id":2,"name":"cache"}]}
+INFO configured user: 65532:65532
+INFO image size bytes: 4650321
+PASS optimized image does not provide /bin/sh
+INFO baseline size bytes: 93303674
+PASS optimized image is smaller than baseline

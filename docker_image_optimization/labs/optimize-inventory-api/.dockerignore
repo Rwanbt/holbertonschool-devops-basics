@@ -1,0 +1,5 @@
+.git/
+dev-data/
+reports/
+*.log
+Dockerfile.baseline
