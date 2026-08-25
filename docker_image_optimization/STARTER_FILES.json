@@ -1,0 +1,332 @@
+[
+  {
+    "path": "README.md",
+    "bytes": 561,
+    "sha256": "08d2a4be63f01d36ee39dba67410efa9314b8b3ec658787c5a295bb5cea11ba8",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/control-build-context/.env",
+    "bytes": 28,
+    "sha256": "9dc73a51e025c8782a0a6362d696980701a022441ad4b8eab7a911496d865518",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/control-build-context/.git/HEAD",
+    "bytes": 21,
+    "sha256": "28d25bf82af4c0e2b72f50959b2beb859e3e60b9630a5e8c603dad4ddb2b6e80",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/control-build-context/Dockerfile",
+    "bytes": 99,
+    "sha256": "9d39a8d99bfb772119a90e24e3d02b4a8de99d5ce84963fb05f5f24a95cb2400",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/control-build-context/app.sh",
+    "bytes": 163,
+    "sha256": "9e8b3f7d3d2ff7db76a5a7768fc7bf3ca50729170488479330293961ed7eb7dc",
+    "mode": "0o755"
+  },
+  {
+    "path": "labs/control-build-context/context-observations.md",
+    "bytes": 320,
+    "sha256": "ba75e6721ed919dadc99c9b72ad24cdc8b13215e8d21307bff61c6b7110839fc",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/control-build-context/debug.log",
+    "bytes": 19,
+    "sha256": "6eb32203c6ffd5afdac1db5d2f7c15d7f225d79fc5c7c3e89c08f47300429b43",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/control-build-context/local-only/context-noise.bin",
+    "bytes": 2097152,
+    "sha256": "6d31d13cedb02386efcdc74d55534fbbb091f0aefe43c4cc31b22ae7b004e880",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/control-build-context/reports/summary.txt",
+    "bytes": 13,
+    "sha256": "e412fd4df720b76d64d5147785ec5f6644f804b05f59f25639fbed94436c1bde",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/measure-before-optimizing/Dockerfile.baseline",
+    "bytes": 144,
+    "sha256": "4c50518b960777775a553e4632322cc0711e3a53271936e3588fd1b0db5b35f3",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/measure-before-optimizing/app.py",
+    "bytes": 1026,
+    "sha256": "637e409db1f708a7907a3e8e25e8317006d5e6b2896fd622c713ee6c384e21e5",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/measure-before-optimizing/docs/architecture.md",
+    "bytes": 102,
+    "sha256": "d32475aff9f0e6c32d90e911f4548688c4596651381ea3c0f2f4a23daa0a6a0c",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/measure-before-optimizing/local-notes.txt",
+    "bytes": 61,
+    "sha256": "0d4413ece95a9fc5da0e55bd8734b706b2efc3489258c15685dcf2bbe734ddea",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/measure-before-optimizing/reports/coverage.txt",
+    "bytes": 73,
+    "sha256": "8302c9f1879794050326e5f3a95fc45b60bd06f85c58521bea156b0e585f6646",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/measure-before-optimizing/reports/test-data.bin",
+    "bytes": 8388608,
+    "sha256": "2daeb1f36095b44b318410b3f4e8b5d989dcc7bb023d1426c492dab0a3053e74",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/measure-before-optimizing/results.md",
+    "bytes": 254,
+    "sha256": "04279781d3919cfa6a2f10a4def9591fa78518f266e68751260a87898637bee2",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/measure-before-optimizing/tests/test_app.py",
+    "bytes": 386,
+    "sha256": "1d7c057c5cb0de2c48f094a8acc0596f577fa1beabd378d9287d02b20f50c747",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/optimize-inventory-api/.git/HEAD",
+    "bytes": 21,
+    "sha256": "28d25bf82af4c0e2b72f50959b2beb859e3e60b9630a5e8c603dad4ddb2b6e80",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/optimize-inventory-api/API_CONTRACT.md",
+    "bytes": 355,
+    "sha256": "7be95b1b5d921545dbc67c1c9ed838517fa1172ac148d8e0d52b784cdcdcb993",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/optimize-inventory-api/Dockerfile",
+    "bytes": 365,
+    "sha256": "3634d1100e80a8cd2fd34fa7806ef0f7421c7837609c44c52bef5ae77318761d",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/optimize-inventory-api/Dockerfile.baseline",
+    "bytes": 347,
+    "sha256": "ed4d0a4e2d248747412108bc8c754f979455a4bee8fec96e43e1b3b4583618f8",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/optimize-inventory-api/cmd/api/main.go",
+    "bytes": 214,
+    "sha256": "1a8ba77422eb206e542d1da33de44b24c1cd73fef3c0c004641bee3ec7132d00",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/optimize-inventory-api/debug.log",
+    "bytes": 45,
+    "sha256": "71fd388a085e0d0fd5585d037c00ee5b7f7dcb436138031ac39d25bd700432fe",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/optimize-inventory-api/dev-data/local-dump.bin",
+    "bytes": 1048576,
+    "sha256": "02fa68ac5c7d1ff16bbb7b315c3793ef9aab63bd51dafd42ca2a0b5f11d1c4d1",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/optimize-inventory-api/dev-data/sample.json",
+    "bytes": 29,
+    "sha256": "ed7940bd23711fe3758bbcc128cb612aa84f915dc22959831b1a829f4486a776",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/optimize-inventory-api/go.mod",
+    "bytes": 42,
+    "sha256": "994287e479d187ab383661675420c6d076e4d5ea76b7daaed5064b43e5caf377",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/optimize-inventory-api/internal/api/api.go",
+    "bytes": 773,
+    "sha256": "a6ffed48a0a0de62f75cf6a6ab522ae190bfc39e904a3065c3794d48c6f543b1",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/optimize-inventory-api/internal/api/api_test.go",
+    "bytes": 1387,
+    "sha256": "721a26d5417947c4ae7d3a1d5c18550d9927a36b7f384b34ddec205ac38290b1",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/optimize-inventory-api/reports/coverage.txt",
+    "bytes": 55,
+    "sha256": "de8fefe2dbd42ca5002b43593338825f89b9741e034a38ce2a04e749293198b0",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/optimize-inventory-api/verify.sh",
+    "bytes": 2500,
+    "sha256": "507d1dad86958d97090db8b21b28a29a8d96a1dc3747d5cbe6e61db1bc637254",
+    "mode": "0o755"
+  },
+  {
+    "path": "labs/preserve-dependency-cache/.dockerignore",
+    "bytes": 66,
+    "sha256": "7eb2e5f6060cfe95fc17bbf1543ddef3a01813d6e96ad74219f0f1a2d0a8e2dc",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/preserve-dependency-cache/Dockerfile.unoptimized",
+    "bytes": 182,
+    "sha256": "18482b1cf2f6c958f2c4a14609da360c9da50e28cf0d172490613f1a04f69d68",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/preserve-dependency-cache/cache-observations.md",
+    "bytes": 249,
+    "sha256": "37d66ca8cffb93c5d8eb96acbf1c76bde630beb4984446fe80539163be24412f",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/preserve-dependency-cache/package-lock.json",
+    "bytes": 444,
+    "sha256": "9e967d6f795580a8bf13e0e326165d1e5eb99168111d9f23a3d5266160a741c2",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/preserve-dependency-cache/package.json",
+    "bytes": 233,
+    "sha256": "81ad0825d8836dfdd07e82c347b5497ea591cb690553757a4cc0c94161721d7f",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/preserve-dependency-cache/packages/message-format/index.js",
+    "bytes": 140,
+    "sha256": "7508d40aba34ac8033eb770748644833fb5d0365ebcd9d1296cf482695b12b6c",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/preserve-dependency-cache/packages/message-format/package.json",
+    "bytes": 75,
+    "sha256": "45ded757afb3ea041502cb271098a468ce10a097092ed8f33aac3045e485194b",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/preserve-dependency-cache/src/server.js",
+    "bytes": 642,
+    "sha256": "52b35e2af652e82b63904d94aec47c17826a302a349143fbd50ea58ac1ffc75a",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/preserve-dependency-cache/test/smoke.js",
+    "bytes": 231,
+    "sha256": "f06f23b7adeecce69cb5f8e3e01b13fbaf03452a6b3dfb060cc4ead993d5a688",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/remove-layer-bloat/Dockerfile.unoptimized",
+    "bytes": 457,
+    "sha256": "f73b6060d2de896cf14e51ba037eb94a558a33e29b04e08bf4e463789381db9e",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/remove-layer-bloat/build-payload.bin",
+    "bytes": 6291456,
+    "sha256": "a0e8bdd8a312de8e45d2cea454dee228ede781730bfc321d96a6fced1b634090",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/remove-layer-bloat/layer-observations.md",
+    "bytes": 415,
+    "sha256": "6037ee88ea4178f5a022fc9359130b6019b927e74873f2f1faafc20ef56b8300",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/select-compatible-base/Dockerfile.alpine",
+    "bytes": 121,
+    "sha256": "30fdc2de7fe6ee066f0a7aa1bb3701e2dae0303aeb134346301ddaffcf9b5a81",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/select-compatible-base/Dockerfile.debian-slim",
+    "bytes": 124,
+    "sha256": "33d731c94b0a7490f1291828bfc24268ce7b3dffaa705186214eed18a19e9dc6",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/select-compatible-base/Dockerfile.ubuntu",
+    "bytes": 122,
+    "sha256": "0a78985de766e9590523abb6bef14bc39e69881ce396228f179754682e30f79b",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/select-compatible-base/decision.md",
+    "bytes": 292,
+    "sha256": "af6f7d16dea6bd2581e51fc56dfb675d5548adc3348dc95396a2a6f4cd9a3542",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/select-compatible-base/hello.sh",
+    "bytes": 74,
+    "sha256": "77d8779f066d589cdac823f3a48a34e95c360d8e03d1df43e0ad3101a84f97da",
+    "mode": "0o755"
+  },
+  {
+    "path": "labs/select-compatible-base/runtime-requirements.md",
+    "bytes": 488,
+    "sha256": "7381ef65ce6240cfcad0e3ca568c23552b14607e6ab65e1d73e04e9f473d7361",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/separate-build-runtime/.dockerignore",
+    "bytes": 61,
+    "sha256": "ce5393659be7b96b0e269338cd919096fcbc5f04243d74be20d4f7a8c841d40d",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/separate-build-runtime/Dockerfile.single-stage",
+    "bytes": 191,
+    "sha256": "0c8513d13704fc3277da22c698876675bc739bc052c12fb57b00607135329f71",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/separate-build-runtime/cmd/greeter/main.go",
+    "bytes": 119,
+    "sha256": "fa6054f9baa76b1c89615b6374dd9d2fdd0091537b6d4d0b54d8b532837ea9ac",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/separate-build-runtime/go.mod",
+    "bytes": 36,
+    "sha256": "3473b046c51bc78f8fe99d059d10bba84e041b85ea56f9e6c539cd05ed0e111b",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/separate-build-runtime/internal/message/message.go",
+    "bytes": 86,
+    "sha256": "fae6f77e0ded975b4bc7fcff6ec7e2ba4a7bdb37c2c87dd7c7d4ad832efdb84b",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/separate-build-runtime/internal/message/message_test.go",
+    "bytes": 213,
+    "sha256": "e538b348e0da59c7accd50b538d552daa39f60b092070984b85dc00baafbacff",
+    "mode": "0o644"
+  },
+  {
+    "path": "labs/separate-build-runtime/multistage-observations.md",
+    "bytes": 308,
+    "sha256": "00683a5ae7574b45a536d5465aebb2acbf591bb1083ce7990b5a2c6667432fff",
+    "mode": "0o644"
+  }
+]

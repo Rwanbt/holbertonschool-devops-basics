@@ -1,0 +1,9 @@
+# syntax=docker/dockerfile:1
+FROM alpine:3.22
+# The bind mount exposes the synthetic payload to this build step without
+# adding it to the image unless the step explicitly copies it.
+RUN --mount=type=bind,source=build-payload.bin,target=/mnt/build-payload.bin,ro \
+    cp /mnt/build-payload.bin /tmp/build-payload.bin
+RUN sha256sum /tmp/build-payload.bin | cut -d ' ' -f 1 > /artifact.sha256
+RUN rm -f /tmp/build-payload.bin
+CMD ["cat", "/artifact.sha256"]

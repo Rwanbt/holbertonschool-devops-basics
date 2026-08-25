@@ -1,0 +1,4 @@
+.git/
+*.log
+multistage-observations.md
+Dockerfile.multistage

@@ -1,0 +1,11 @@
+# syntax=docker/dockerfile:1
+FROM golang:1.25-alpine
+WORKDIR /workspace
+COPY . .
+RUN go mod download
+RUN go test ./...
+RUN CGO_ENABLED=0 go build -buildvcs=false -o /usr/local/bin/inventory-api ./cmd/api
+RUN dd if=/dev/zero of=/tmp/build-payload.bin bs=1M count=24
+RUN rm -f /tmp/build-payload.bin
+EXPOSE 8080
+CMD ["/usr/local/bin/inventory-api"]

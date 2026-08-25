@@ -1,0 +1,1 @@
+Reference-only coverage output. The running API does not need this file.

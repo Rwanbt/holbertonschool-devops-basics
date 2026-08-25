@@ -1,0 +1,12 @@
+{
+  "name": "cache-lab",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node test/smoke.js"
+  },
+  "dependencies": {
+    "message-format": "file:packages/message-format"
+  }
+}
