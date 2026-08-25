@@ -1,10 +1,12 @@
 # Build Context Observations
 
-- Unfiltered context size:
-- Filtered context size:
-- Runtime result before `.dockerignore`:
-- Runtime result after `.dockerignore`:
+- Unfiltered context size: `2.10 MB` (line `#8 transferring context: 2.10MB done` in `before-build.log`). The 2 MB fake `local-only/context-noise.bin` plus `.git/`, `.env`, `reports/`, `debug.log`, and `before-build.log` were all included in the build context.
+- Filtered context size: `174 B` (line `#6 transferring context: 174B done` in `after-build.log`). With `.dockerignore` in place, only `Dockerfile`, `app.sh`, `context-observations.md`, and the `.dockerignore` itself were eligible for transfer.
+- Runtime result before `.dockerignore`: `context-contains-local-only-data` (`docker run --rm context-lab:before`). `app.sh` found `/app/local-only/context-noise.bin` because `COPY . .` shipped it into the image.
+- Runtime result after `.dockerignore`: `context-clean` (`docker run --rm context-lab:after`). With `local-only/` excluded, `COPY . .` had nothing to copy from that path, so `app.sh` reported the absence.
 
 ## Explanation
 
-Explain why `.dockerignore` changes both the data transferred to the builder and the files available to later `COPY` or `ADD` instructions.
+`.dockerignore` acts on the **build context itself**, not on the transfer pipeline alone. Before any `COPY` or `ADD` runs, the BuildKit builder enumerates the files that will make up the context tar sent from the CLI to the daemon: every entry matching a pattern in `.dockerignore` is dropped at that enumeration step. The line `transferring context: 2.10MB done` versus `transferring context: 174B done` is the visible side effect of that filtering — fewer bytes travel over the wire and the build starts faster. More importantly, every subsequent `COPY` and `ADD` instruction in the Dockerfile is resolved **against this filtered context**: a path that was excluded simply does not exist as far as the builder is concerned, so `COPY . .` cannot reach into `.git/`, `.env`, `local-only/`, `reports/`, or `*.log`. In the unfiltered build those paths were real files on the image filesystem (`/app/local-only/context-noise.bin` triggered the `context-contains-local-only-data` branch); in the filtered build the `local-only/` directory never made it into `/app`, which is why `app.sh` fell through to the `context-clean` branch.
+
+So `.dockerignore` is not just a transfer-speed optimization: it is a content control mechanism that determines **which files are even available** to `COPY`/`ADD` in that build.
