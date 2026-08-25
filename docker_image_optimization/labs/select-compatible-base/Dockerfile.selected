@@ -1,0 +1,6 @@
+# syntax=docker/dockerfile:1
+FROM alpine:3.22
+WORKDIR /app
+COPY --chmod=0755 hello.sh /app/hello.sh
+USER 65532:65532
+CMD ["/app/hello.sh"]

@@ -2,13 +2,15 @@
 
 | Candidate | Size in bytes | Runtime result | Notes |
 |---|---:|---|---|
-| Ubuntu 24.04 | | | |
-| Debian 12 slim | | | |
-| Alpine 3.22 | | | |
+| Ubuntu 24.04 (`ubuntu:24.04`) | 29756417 | `{"runtime":"posix-shell","status":"ok"}` | Full glibc distro; no glibc-only code in `hello.sh`. Largest of the three. |
+| Debian 12 slim (`debian:12-slim`) | 28235699 | `{"runtime":"posix-shell","status":"ok"}` | glibc-compatible slim variant; ~1.5 MB lighter than Ubuntu but still glibc. |
+| Alpine 3.22 (`alpine:3.22`) | 3790782 | `{"runtime":"posix-shell","status":"ok"}` | musl libc + BusyBox `/bin/sh` (POSIX). Smallest candidate; meets every stated requirement. |
+| Selected (`alpine:3.22` + `USER 65532:65532`) | 3790935 | `{"runtime":"posix-shell","status":"ok"}` | Same Alpine base, 153 B overhead for the USER directive. |
 
 ## Selected Base
 
-- Selection:
-- Compatibility evidence:
-- Why this is not a universal choice:
-- Version tag versus digest:
+- **Selection**: `alpine:3.22` (pinned versioned tag, not `latest`), with `USER 65532:65532` configured so the runtime process no longer runs as root.
+- **Compatibility evidence**: every candidate — including Alpine — successfully ran `hello.sh` and printed `{"runtime":"posix-shell","status":"ok"}`. `hello.sh` only needs `/bin/sh` to execute a `printf`; it has no glibc-specific symbols, no native extension, and does not require a package manager at runtime. Alpine 3.22's BusyBox `sh` is POSIX-compliant, which satisfies the only runtime requirement that actually constrains the choice.
+- **Why this is not a universal choice**: the requirements document explicitly warns that this choice is wrong for an application that needs `glibc` or a vendor-supported Debian package. Alpine ships `musl` instead of `glibc`, so any binary compiled against `glibc` (for example a pre-built Node.js native module that is only published as a `glibc`-linked `.node` file, or a Debian-packaged CLI that pulls in `libc6` symbols) will misbehave or fail to load on Alpine. The smaller base is the correct pick here only because the workload is a pure POSIX shell script.
+- **Version tag versus digest**: pinning to `alpine:3.22` gives us a stable, named reference that is reproducible for humans and easy to read in a `Dockerfile`, but it is still **mutable** at the registry level: the maintainer can re-publish the same tag with rebuilt layers (security patches, ABI tweaks, etc.) and the next pull will silently change the image content. A SHA256 digest (for example `alpine@sha256:...`) addresses the image content itself, not its tag, so two builds weeks apart will produce byte-identical layers — that is what you want for true immutability, signed supply-chain attestations, and deterministic rollbacks. The convention is to develop against a versioned tag for readability and to pin the digest in production deployments (often via the CI/CD pipeline) so that audits and rollbacks remain trustworthy.
+- **Why Debian slim is safer than Alpine in some situations**: when the application links against `glibc` (which is the case for most prebuilt Go or Python wheels, for `.so` libraries shipped by Debian-derived distributions, or for vendor SDKs that target Debian), Alpine's `musl` libc introduces subtle ABI differences — string-layout edge cases, DNS resolver behaviour, locale data, thread stack sizes — that can cause crashes or hard-to-debug runtime errors. Debian slim keeps `glibc` and the Debian package ecosystem (`apt`) while still trimming most of the full Ubuntu userland, so it is the safer pick whenever glibc compatibility is required. Alpine wins only when the application is genuinely libc-agnostic and ships its own runtime, as is the case here.
