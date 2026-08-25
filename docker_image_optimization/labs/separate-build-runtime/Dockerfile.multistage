@@ -1,0 +1,23 @@
+# syntax=docker/dockerfile:1
+
+# ---------- build stage ----------
+FROM golang:1.25-alpine AS builder
+WORKDIR /src
+
+# Copy module manifests first so `go mod download` is cached as long as
+# the dependency graph is unchanged, regardless of source edits.
+COPY go.mod ./
+RUN go mod download
+
+# Now copy the rest of the source and exercise the test suite.
+COPY . .
+RUN go test ./...
+
+# Statically link the binary so it can run on a scratch final image.
+RUN CGO_ENABLED=0 go build -o /out/greeter ./cmd/greeter
+
+# ---------- runtime stage ----------
+FROM scratch
+COPY --from=builder /out/greeter /greeter
+USER 65532:65532
+ENTRYPOINT ["/greeter"]
