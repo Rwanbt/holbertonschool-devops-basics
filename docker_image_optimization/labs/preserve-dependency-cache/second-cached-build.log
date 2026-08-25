@@ -1,0 +1,57 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.cached
+#1 transferring dockerfile: 723B done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1
+#2 DONE 0.3s
+
+#3 docker-image://docker.io/docker/dockerfile:1@sha256:ecfaec9ed6d810b56388c508f4121597bfbba70d41a6dfeee4d8cad5f295fc32
+#3 resolve docker.io/docker/dockerfile:1@sha256:ecfaec9ed6d810b56388c508f4121597bfbba70d41a6dfeee4d8cad5f295fc32 0.0s done
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/library/node:22-bookworm-slim
+#4 DONE 0.3s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 106B done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 1.07kB done
+#6 DONE 0.0s
+
+#7 [1/7] FROM docker.io/library/node:22-bookworm-slim@sha256:e9bff3a454208b46a1f96da92878cc7f56a2a41ceac2216825be3177736896b5
+#7 resolve docker.io/library/node:22-bookworm-slim@sha256:e9bff3a454208b46a1f96da92878cc7f56a2a41ceac2216825be3177736896b5 0.0s done
+#7 DONE 0.0s
+
+#8 [2/7] WORKDIR /app
+#8 CACHED
+
+#9 [3/7] COPY package.json package-lock.json ./
+#9 CACHED
+
+#10 [4/7] COPY packages/message-format ./packages/message-format
+#10 CACHED
+
+#11 [5/7] RUN npm ci --omit=dev && node -e "setTimeout(() => {}, 3000)"
+#11 CACHED
+
+#12 [6/7] COPY src ./src
+#12 DONE 0.0s
+
+#13 [7/7] COPY test ./test
+#13 DONE 0.1s
+
+#14 exporting to image
+#14 exporting layers
+#14 exporting layers 0.2s done
+#14 exporting manifest sha256:4237ed5084249a9e78d9a3fce5162c01344e94c0e85b97c5b40679763a914d61 0.0s done
+#14 exporting config sha256:7add6c2da1f3fb715de08be953e6f77e6fdb9de80fb2b1cf3d5bc4df5f1a57ea 0.0s done
+#14 exporting attestation manifest sha256:24b1d81b0933560d38b972951c5f29f606e2dc9ef48118c61515e6f32961a60c 0.0s done
+#14 exporting manifest list sha256:e328b48cab935b7d3047582403c703ee674c7d8a6672b66a9fc6212677ff7ac5 0.0s done
+#14 naming to docker.io/library/cache-lab:cached
+#14 naming to docker.io/library/cache-lab:cached done
+#14 unpacking to docker.io/library/cache-lab:cached 0.1s done
+#14 DONE 0.4s
